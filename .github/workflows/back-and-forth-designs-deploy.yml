@@ -16,7 +16,7 @@ jobs:
         run: yarn build
 
       - name: Deploy to S3
-        run: aws s3 sync index.html s3://${{ secrets.S3_BUCKET }}
+        run: aws s3 mv index.html s3://${{ secrets.S3_BUCKET }}
         # uses: jmartin432/s3-deploy@v1
         # with:
         #   folder: build
