@@ -15,15 +15,16 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Deploy
-        uses: reggionick/s3-deploy@v4
-        with:
-          folder: build
-          bucket: ${{ secrets.S3_BUCKET }}
-          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          invalidation: /
-          delete-removed: true
-          no-cache: true
-          private: true
-          files-to-include: '.*/*,*/*,**'
+      - name: Deploy to S3
+        run: aws s3 sync index.html s3://${{ secrets.S3_BUCKET }}
+        # uses: jmartin432/s3-deploy@v1
+        # with:
+        #   folder: build
+        #   bucket: ${{ secrets.S3_BUCKET }}
+        #   bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+        #   dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+        #   invalidation: /
+        #   delete-removed: true
+        #   no-cache: true
+        #   private: true
+        #   files-to-include: '.*/*,*/*,**'
