@@ -17,8 +17,11 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Deploy to S3
+      - name: Upload index.html
         run: aws s3 mv index.html s3://${{ secrets.S3_BUCKET }}
+
+      - name: Create Invalidation
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/"
         # uses: jmartin432/s3-deploy@v1
         # with:
         #   folder: build
