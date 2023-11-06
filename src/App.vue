@@ -35,6 +35,9 @@ header {
 h1 {
   font-size: 48px;
   color: purple;
+  font-family: Oswald;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px pink;
 }
 
 h2 {
