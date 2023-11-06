@@ -1,11 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Back and Forth Logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Back and Forth Logo" class="logo" src="@/assets/images/logo.svg" width="125" height="125" />
 
     <div>
       <h1>Back and Forth</h1>
@@ -31,6 +30,16 @@ import HelloWorld from './components/HelloWorld.vue'
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+h1 {
+  font-size: 48px;
+  color: purple;
+}
+
+h2 {
+  font-size: 36px;
+  color: green;
 }
 
 .logo {
