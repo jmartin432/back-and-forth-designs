@@ -17,11 +17,11 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Upload index.html
-        run: aws s3 mv index.html s3://${{ secrets.S3_BUCKET }}
+      # - name: Upload index.html
+      #   run: aws s3 mv index.html s3://${{ secrets.S3_BUCKET }}
 
       - name: Sync Source
-        run: aws s3 sync . s3://${{ secrets.S3_BUCKET }}
+        run: aws s3 sync ./src s3://${{ secrets.S3_BUCKET }}/src --delete
 
       - name: Create Invalidation
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/"
