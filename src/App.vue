@@ -3,102 +3,192 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <img alt="Back and Forth Logo" class="logo" src="@/assets/images/logo.svg" width="125" height="125" />
+    <header>
+        <div class="title-container">
+            <div class="title-image-container">
+              <img alt="Back and Forth Logo" class="logo title-image" src="@/assets/images/logo.svg" width="125" height="125" />
+            </div>
+            <div class="title-text-container">
+                <h1>Back and Forth</h1>
+                <h2>Designs and Dry Goods</h2>
+            </div>
+        </div>
+            <nav>
+                <RouterLink to="/">Home</RouterLink>
+                <RouterLink to="/contact">Contact</RouterLink>
+                <RouterLink to="/meeting">Meet</RouterLink>
+                <!-- <RouterLink to="/about">About</RouterLink> -->
+            </nav>
+    </header>
 
-    <div>
-      <h1>Back and Forth</h1>
-      <h2>Designs and Dry Goods</h2>
+    <RouterView class="view-container"/>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
-        <RouterLink to="/meeting">Meeting</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-
-  <footer>
-
-  </footer>
+    <footer>
+        <div id="footer-container">
+            <!-- <img src = "assets/images/bnf.svg" alt="Back and Forth Logo"/> -->
+            <span id="footer-emoji-left">🦄</span>
+            <span id="footer-text"> Have a Nice Day! </span>
+            <span id="footer-emoji-right">🦄</span>
+            <!-- <img src = "assets/images/bnf.svg" alt="Back and Forth Logo"/> -->
+        </div>
+    </footer>
 </template>
 
 <style scoped>
+
 header {
-  line-height: 1.5;
   max-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.title-image-container {
+  align-self: center;
+  padding: 0 1rem;
+}
+
+.title-image {
+}
+
+.title-text-container {
+  align-self: center;
+  padding: 0 1rem;
 }
 
 h1 {
-  font-size: 48px;
-  color: purple;
-  font-family: Oswald;
-  font-weight: 700;
-  text-shadow: 2px 2px 5px pink;
+    font-size: 4rem;
+    color: #D175CB;
+    font-family: Oswald;
+    font-weight: 700;
+    /* text-shadow: 2px 2px 5px #D175CB88; */
+    margin: 0;
 }
 
 h2 {
-  font-size: 36px;
-  color: green;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+    font-size: 3rem;
+    color: #75CBD1;
+    font-family: Poppins;
+    font-weight: 400;
+    margin: 0;
 }
 
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+    padding: 1rem 0;
+    border-top: 1px solid #CBD175
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+    color: #D175CB;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 1rem;
+    border-left: 1px solid #CBD175;
+    font-family: "Open Sans";
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: #777;
+}
+
+nav a.router-link-exact-active {
+    color: #D175CB88;
+    cursor: default;
+    text-decoration: none;
+}
+
+nav a.router-link-exact-active:hover {
+    background-color: transparent;
 }
 
 nav a:first-of-type {
-  border: 0;
+    border: 0;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+@media screen and (max-width: 600px) {
+    .title-container {
+        flex-direction: column;
+    }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+    h1 {
+        font-size: 2rem;
+    }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+    h2 {
+      font-size: 1.5rem;
+    }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
+    nav a {
+      font-size: .75rem;
+    }
+
+    .title-image {
+      width: 4rem;
+      height: max-content;
+      padding: .5rem 0;
+    }
+}
+
+footer {
     font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    color: #D175CB;
+    transition-duration: .75s;
+}
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+#footer-container{
+    text-align: center;
+}
+
+/* footer > div > img {
+    height: 20px;
+    margin: 0px 15px;
+} */
+
+/* .footer-contact {
+    display: flex;
+    flex-direction: row;
+} */
+
+/* .footer-contact-item {
+    flex: 50%
+} */
+  
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+
+#footer-emoji-right {
+    display: inline-block;
+    transform: scale(-1, 1);
+    transition-duration: .75s;
+}
+
+#footer-emoji-left {
+    display: inline-block;
+    transform: scale(1, 1);
+    transition-duration: .75s;
+}
+
+footer:hover #footer-emoji-right {
+    transform: scale(1, 1);
+}
+
+footer:hover #footer-emoji-left {
+    transform: scale(-1, 1);
 }
 </style>

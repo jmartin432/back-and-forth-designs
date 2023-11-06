@@ -1,16 +1,19 @@
+<script setup>
+    import ContactForm from '../components/ContactForm.vue';
+</script>
+
 <template>
-    <div>
-      <h1>This is a Contact Page</h1>
+    <div class="view-container">
+        <div>
+            <h3>Get In Touch</h3>
+            <p>
+                Send us a message with the contact form below.
+            </p>
+        </div>
+        <ContactForm />
     </div>
 </template>
   
 <style>
-@media (min-width: 1024px) {
-    .about {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-    }
-}
 </style>
   
