@@ -17,6 +17,7 @@
 <style>
 
 #meeting-scheduler {
+    margin-top: 3rem;
     box-sizing: border-box;
     /* padding: 0 2rem; */
     width: 100%; 
@@ -25,6 +26,7 @@
 
 @media (max-width: 600px) {
     #meeting-scheduler {
+        margin-top: 1rem;
         height: 1000px;
     }
 }

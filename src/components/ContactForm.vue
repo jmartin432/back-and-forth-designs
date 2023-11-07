@@ -186,7 +186,7 @@ label {
     color: #75CBD1;
     margin-bottom: .25rem;
     font-family: "Open Sans";
-    font-size: 1rem
+    font-size: 1rem;
 }
 
 label span {
@@ -194,7 +194,7 @@ label span {
 }
 
 input, label {
-    display:block;
+    display: block;
 }
 
 input, textarea {
@@ -204,6 +204,7 @@ input, textarea {
     background-color: #D2C8D2;
     font-family: Alegreya;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 input:focus, textarea:focus {

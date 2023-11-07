@@ -137,10 +137,11 @@ footer {
     font-size: 1rem;
     font-family: "Poppins", sans-serif;
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 60px;
+    padding: 2rem 0;
     color: #D175CB;
     transition-duration: .75s;
+    border-top: 1px solid #CBD175;
+    margin-top: 2rem;
 }
 
 #footer-message{
@@ -181,6 +182,10 @@ footer {
       width: 4rem;
       height: max-content;
       padding: .5rem 0;
+    }
+
+    .social-icon {
+        width: 1.5rem;
     }
 }
 
