@@ -115,7 +115,7 @@
                         this.submitMessage = 'Your message was successfully submitted. Thank you, we will be in touch.'
                         setTimeout(() => { this.resetForm(); }, 5000);
                     } else {
-                        console.log('ERROR');
+                        console.error(responseBody);
                         this.submitMessage = `There was a problem submitting your message. 
                             Please send us an email at <a href="mailto: info@backandforthdesigns.com" target="_blank">info@backandforthdesigns.com</a>`
                     }
