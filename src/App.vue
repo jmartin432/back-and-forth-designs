@@ -24,7 +24,22 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterView class="view-container"/>
 
     <footer>
-        <div id="footer-container">
+        <div id="footer-social-icons">
+            <div class="social-icon-container">
+                <a href="https://github.com/jmartin432/back-and-forth-designs/blob/main/README.md" target="_blamk">
+                    <img class="social-icon" src="@/assets/images/github_mark.svg" alt="GitHub Logo" />
+                </a>
+            </div>
+            <div  class="social-icon-container">
+                <a href="https://www.linkedin.com/in/justinleemartin" target="_blamk">
+                    <img class="social-icon" src="@/assets/images/linkedin_mark.svg" alt="Linkedin Logo" />
+                </a>
+            </div>
+            <div  class="social-icon-container">
+                <img class="social-icon" src="@/assets/images/instagram_mark.svg" href="" alt="Instagram Logo" target="_blamk" />
+            </div>
+        </div>
+        <div id="footer-message">
             <!-- <img src = "assets/images/bnf.svg" alt="Back and Forth Logo"/> -->
             <span id="footer-emoji-left">🦄</span>
             <span id="footer-text"> Have a Nice Day! </span>
@@ -118,6 +133,33 @@ nav a:first-of-type {
     border: 0;
 }
 
+footer {
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    color: #D175CB;
+    transition-duration: .75s;
+}
+
+#footer-message{
+    text-align: center;
+}
+
+#footer-social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon-container{
+    padding: 1rem 2rem;
+}
+
+.social-icon {
+    width: 2rem;
+}
+
 @media screen and (max-width: 600px) {
     .title-container {
         flex-direction: column;
@@ -140,20 +182,6 @@ nav a:first-of-type {
       height: max-content;
       padding: .5rem 0;
     }
-}
-
-footer {
-    font-size: 1rem;
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 60px;
-    color: #D175CB;
-    transition-duration: .75s;
-}
-
-#footer-container{
-    text-align: center;
 }
 
 /* footer > div > img {
