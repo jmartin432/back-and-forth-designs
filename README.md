@@ -1,35 +1,15 @@
-# back-and-forth-designs
+# Back and Forth Designs
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a Single Page App hosted on AWS. Thanks for checking it out.
 
-## Recommended IDE Setup
+## Technologies
+- JavaScript
+- HTML5
+- CSS
+- Vue.js
+- AWS CloudFront
+- AWS Lambda
+- AWS S3
+- AWS Simple Email Service
+- AWS API Gateway
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
