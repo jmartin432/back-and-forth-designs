@@ -58,16 +58,18 @@
     export default {
         data() {
             return {
-                url: "https://oj6vub3ps7.execute-api.us-east-1.amazonaws.com/prod/contact-us",
-                name: "",
-                email: "",
-                message: "",
-                nameWarning: " * ",
-                emailWarning: " * ",
-                messageWarning: " * ",
+                url: 'https://oj6vub3ps7.execute-api.us-east-1.amazonaws.com/prod/contact-us',
+                name: '',
+                email: '',
+                message: '',
+                notificationEmail: 'info@backandforthdesigns.com',
+                source: 'Back and Forth Designs',
+                nameWarning: ' * ',
+                emailWarning: ' * ',
+                messageWarning: ' * ',
                 submitting: false,
                 showSubmitMessage: false,
-                submitMessage: ""
+                submitMessage: ''
             };
         },
         methods: {
@@ -102,7 +104,9 @@
                         body: JSON.stringify({
                             "name": this.name,
                             "email": this.email,
-                            "message": this.message
+                            "message": this.message,
+                            "notificationEmail": this.notificationEmail,
+                            "source": this.source
                         })
                     }
                 )
@@ -141,14 +145,13 @@
     border: 2px solid #AC68A7;
     border-radius: 4px;
     height: auto;
-    max-height: 100px;
     overflow: hidden;
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .submit-message-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .submit-message-leave-active {
@@ -157,7 +160,7 @@
 
 .submit-message-enter-from,
 .submit-message-leave-to {
-  transform: translateX(20px);
+  transform: translateX(200px);
   opacity: 0;
 }
 
@@ -211,10 +214,6 @@ input:focus, textarea:focus {
     outline: none;
     border: 3px solid #AC68A7;
     border-radius: 4px;
-}
-
-input::placeholder, textarea::placeholder {
-    /* font-size: .75rem; */
 }
 
 input {
