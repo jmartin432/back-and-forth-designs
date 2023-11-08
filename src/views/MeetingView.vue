@@ -2,7 +2,7 @@
     <div class="view-container">
         <div>
             <h3>Schedule a Meeting</h3>
-            <p>If you would like to schedule a meeting to talk about textiles, sewing, shoe-making or leatherwork, feel free to put some time on my calendar.</p>
+            <p>If you would like to schedule a meeting to talk about textiles, sewing or dry goods, feel free to put some time on my calendar.</p>
         </div>
         <iframe
             id="meeting-scheduler"
