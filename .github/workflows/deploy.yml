@@ -1,4 +1,4 @@
-name: Back and Forth Designs Deploy
+name: Justin L. Martin Deploy
 on: [push]
 jobs:
   run:
