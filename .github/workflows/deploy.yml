@@ -17,9 +17,6 @@ jobs:
       - name: Build
         run: yarn build
 
-      # - name: Upload index.html
-      #   run: aws s3 mv index.html s3://${{ secrets.S3_BUCKET }}
-
       - name: Sync Source
         run: aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }} --delete
 
