@@ -2,7 +2,7 @@
     <div>
         <h3>Welcome</h3>
         <p>
-            Back and Forth Designs and Dry Goods is a textile and clothing design studio based in Portland, Oregon. 
+            <strong>Back and Forth: Designs and Dry Goods</strong> is a textile and clothing design studio based in Portland, Oregon. 
             We are part of the Bridge Rat Studios Collective under the Morrison Bridge.
         </p>
     </div>
