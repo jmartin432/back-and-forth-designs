@@ -7,7 +7,7 @@
         </p>
         <h3>Contact</h3>
         <p>
-            <a href="mailto:info@backandforthdesigns.com" target="_blank">info@backandforthdesigns.com</a>
+            Send me an email at <a href="mailto:info@backandforthdesigns.com" target="_blank">info@backandforthdesigns.com</a>
         </p>
 
     </div>
