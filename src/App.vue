@@ -149,7 +149,7 @@ footer {
     padding: 2rem 0;
     color: #D175CB;
     transition-duration: .75s;
-    border-top: 1px solid #CBD175;
+    border-top: 1px solid #d1ba75;
     margin-top: 2rem;
 }
 

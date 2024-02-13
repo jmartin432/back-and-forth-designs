@@ -13,12 +13,6 @@ body {
   /* border: 1px solid red; */
 }
 
-h3 {
-  font-family: Poppins;
-  font-size: 2rem;
-  color: #75CBD1;
-}
-
 p {
     font-family: Alegreya;
     font-size: 1.25rem;
@@ -57,10 +51,6 @@ button:hover {
     }
     #app {
       padding: 1rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
     }
 
     p {
