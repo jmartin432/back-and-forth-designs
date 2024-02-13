@@ -13,34 +13,34 @@ import { RouterLink, RouterView } from 'vue-router'
                 <h2>Designs and Dry Goods</h2>
             </div>
         </div>
-            <nav>
+            <!-- <nav>
                 <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/contact">Contact</RouterLink>
                 <RouterLink to="/meeting">Meet</RouterLink>
-                <!-- <RouterLink to="/about">About</RouterLink> -->
-            </nav>
+                <RouterLink to="/about">About</RouterLink>
+            </nav> -->
     </header>
 
     <RouterView class="view-container"/>
 
     <footer>
-        <div id="footer-social-icons">
+        <!-- <div id="footer-social-icons">
             <div class="social-icon-container">
                 <a href="https://github.com/jmartin432/back-and-forth-designs/blob/main/README.md" target="_blamk">
                     <img class="social-icon" src="@/assets/images/github_mark.svg" alt="GitHub Logo" />
                 </a>
             </div>
-            <!-- <div  class="social-icon-container">
+            <div  class="social-icon-container">
                 <a href="https://www.linkedin.com/in/justinleemartin" target="_blamk">
                     <img class="social-icon" src="@/assets/images/linkedin_mark.svg" alt="Linkedin Logo" />
                 </a>
-            </div> -->
+            </div>
             <div  class="social-icon-container">
                 <a href="https://www.instagram.com/backandforthdesigns/" target="_blank">
                     <img class="social-icon" src="@/assets/images/instagram_mark.svg" alt="Instagram Logo" />
                 </a>
             </div>
-        </div>
+        </div> -->
         <div id="footer-message">
             <!-- <img src = "assets/images/bnf.svg" alt="Back and Forth Logo"/> -->
             <span id="footer-emoji-left">🦄</span>
@@ -79,6 +79,13 @@ header {
 .title-text-container {
   align-self: center;
   padding: 0 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .title-text-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 h1 {
