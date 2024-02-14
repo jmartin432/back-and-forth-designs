@@ -1,12 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+    import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
     <header>
         <div class="title-container">
-            <div class="title-image-container">
-              <img alt="Back and Forth Logo" class="logo title-image" src="@/assets/images/logo.svg" width="125" height="125" />
+            <div class="title-image-container" @mouseenter="play">
+                <Vue3Lottie 
+                    ref="anim"
+                    :animationData="lottieLogo" 
+                    :height="125" 
+                    :width="125" 
+                    :loop="1"
+                />
+                <!-- <img alt="Back and Forth Logo" class="logo title-image" src="@/assets/images/logo.svg" width="125" height="125" /> -->
             </div>
             <div class="title-text-container">
                 <h1>Back and Forth</h1>
@@ -51,152 +58,191 @@ import { RouterLink, RouterView } from 'vue-router'
     </footer>
 </template>
 
+<script>
+    import animationData from '../src/assets/images/lottie-logo.json'
+    export default {
+        data() {
+            return {
+                lottieLogo: animationData,
+                logoColors: [
+                   // [0.82, 0.46, 0.8, 1],
+                    [0.82, 0.73, 0.46, 1],
+                   // [0.46, 0.82, 0.81, 1],
+                    [0.82, 0.46, 0.48, 1],
+                    [0.52, 0.82, 0.46, 1],
+                    [0.82, 0.58, 0.46, 1],
+                    [0.46, 0.47, 0.82, 1]
+                ]
+            };
+        },
+        methods: {
+            play() {
+                const color = this.logoColors[(Math.floor(Math.random() * this.logoColors.length))];
+                console.log(color)
+                this.lottieLogo.layers[0].shapes[0].it[0].it[0].it[1].c.k = color;
+                this.lottieLogo.layers[0].shapes[0].it[1].it[0].it[1].c.k = color;
+                this.$refs["anim"].stop();
+                this.$refs["anim"].play();
+            },
+            pause() {
+                this.$refs["anim"].pause();
+            },
+        },
+         async mounted() {
+            console.log(animationData)
+            this.play();
+        }
+    }
+</script>
+
+
+
 <style scoped>
 
-header {
-  max-height: 100vh;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.title-container {
+    header {
+    max-height: 100vh;
     width: 100%;
-    display: flex;
-    margin: 0 auto;
     justify-content: center;
     margin-bottom: 1rem;
-}
-
-.title-image-container {
-  align-self: center;
-  padding: 0 1rem;
-}
-
-.title-image {
-}
-
-.title-text-container {
-  align-self: center;
-  padding: 0 1rem;
-}
-
-@media screen and (max-width: 600px) {
-    .title-text-container {
-        flex-direction: column;
-        text-align: center;
     }
-}
 
-h1 {
-    font-size: 4rem;
-    color: #D175CB;
-    font-family: Oswald;
-    font-weight: 700;
-    /* text-shadow: 2px 2px 5px #D175CB88; */
-    margin: 0;
-}
-
-h2 {
-    font-size: 3rem;
-    color: #75CBD1;
-    font-family: Poppins;
-    font-weight: 400;
-    margin: 0;
-}
-
-nav {
-    width: 100%;
-    font-size: 1rem;
-    text-align: center;
-    margin: auto;
-    padding: 1rem 0;
-    border-top: 1px solid #CBD175
-}
-
-nav a {
-    color: #D175CB;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0 1rem;
-    border-left: 1px solid #CBD175;
-    font-family: "Open Sans";
-    font-weight: 500;
-}
-
-nav a:hover {
-    background-color: #777;
-}
-
-nav a.router-link-exact-active {
-    color: #D175CB88;
-    cursor: default;
-    text-decoration: none;
-}
-
-nav a.router-link-exact-active:hover {
-    background-color: transparent;
-}
-
-nav a:first-of-type {
-    border: 0;
-}
-
-footer {
-    font-size: 1rem;
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    padding: 2rem 0;
-    color: #D175CB;
-    transition-duration: .75s;
-    border-top: 1px solid #d1ba75;
-    margin-top: 2rem;
-}
-
-#footer-message{
-    text-align: center;
-}
-
-#footer-social-icons {
-    display: flex;
-    justify-content: center;
-}
-
-.social-icon-container{
-    padding: 1rem 2rem;
-}
-
-.social-icon {
-    width: 2rem;
-}
-
-@media screen and (max-width: 600px) {
     .title-container {
-        flex-direction: column;
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        margin-bottom: 1rem;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
-
-    nav a {
-      font-size: .75rem;
+    .title-image-container {
+    align-self: center;
+    padding: 0 1rem;
     }
 
     .title-image {
-      width: 4rem;
-      height: max-content;
-      padding: .5rem 0;
+    }
+
+    .title-text-container {
+    align-self: center;
+    padding: 0 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        .title-text-container {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    h1 {
+        font-size: 4rem;
+        color: #D175CB;
+        font-family: Oswald;
+        font-weight: 700;
+        /* text-shadow: 2px 2px 5px #D175CB88; */
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 3rem;
+        color: #75CBD1;
+        font-family: Poppins;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    nav {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin: auto;
+        padding: 1rem 0;
+        border-top: 1px solid #CBD175
+    }
+
+    nav a {
+        color: #D175CB;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0 1rem;
+        border-left: 1px solid #CBD175;
+        font-family: "Open Sans";
+        font-weight: 500;
+    }
+
+    nav a:hover {
+        background-color: #777;
+    }
+
+    nav a.router-link-exact-active {
+        color: #D175CB88;
+        cursor: default;
+        text-decoration: none;
+    }
+
+    nav a.router-link-exact-active:hover {
+        background-color: transparent;
+    }
+
+    nav a:first-of-type {
+        border: 0;
+    }
+
+    footer {
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        width: 100%;
+        padding: 2rem 0;
+        color: #D175CB;
+        transition-duration: .75s;
+        border-top: 1px solid #d1ba75;
+        margin-top: 2rem;
+    }
+
+    #footer-message{
+        text-align: center;
+    }
+
+    #footer-social-icons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-icon-container{
+        padding: 1rem 2rem;
     }
 
     .social-icon {
-        width: 1.5rem;
+        width: 2rem;
     }
-}
+
+    @media screen and (max-width: 600px) {
+        .title-container {
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+        font-size: 1.5rem;
+        }
+
+        nav a {
+        font-size: .75rem;
+        }
+
+        .title-image {
+        width: 4rem;
+        height: max-content;
+        padding: .5rem 0;
+        }
+
+        .social-icon {
+            width: 1.5rem;
+        }
+    }
 
 /* footer > div > img {
     height: 20px;
@@ -214,23 +260,23 @@ footer {
   
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 
-#footer-emoji-right {
-    display: inline-block;
-    transform: scale(-1, 1);
-    transition-duration: .75s;
-}
+    #footer-emoji-right {
+        display: inline-block;
+        transform: scale(-1, 1);
+        transition-duration: .75s;
+    }
 
-#footer-emoji-left {
-    display: inline-block;
-    transform: scale(1, 1);
-    transition-duration: .75s;
-}
+    #footer-emoji-left {
+        display: inline-block;
+        transform: scale(1, 1);
+        transition-duration: .75s;
+    }
 
-footer:hover #footer-emoji-right {
-    transform: scale(1, 1);
-}
+    footer:hover #footer-emoji-right {
+        transform: scale(1, 1);
+    }
 
-footer:hover #footer-emoji-left {
-    transform: scale(-1, 1);
-}
+    footer:hover #footer-emoji-left {
+        transform: scale(-1, 1);
+    }
 </style>
